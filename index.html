@@ -1,32 +1,50 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Simple Website</title>
-    <style>
-        body {
-            font-family: Roboto, sans-serif;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background-color: #f0f0f0;
-        }
-        .container {
-            text-align: center;
-        }
-        h1 {
-            color: #333;
-        }
-    </style>
+  <title>Birthday Surprise</title>
+  <style>
+    body {
+      font-family: monospace;
+      background-color: black;
+      color: green;
+      text-align: center;
+      padding-top: 50px;
+    }
+    
+    #password-input {
+      font-size: 16px;
+      padding: 5px;
+      background-color: black;
+      color: green;
+      border: 1px solid green;
+    }
+    
+    #message {
+      display: none;
+      font-size: 24px;
+      margin-top: 30px;
+    }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Hey There</h1>
-        <p>Das isch mini Website, jetzt isch aber no nüt da...</p>
-    </div>
+  <h1>Birthday Surprise</h1>
+  <p>Enter the password to see the message:</p>
+  <input type="password" id="password-input" onkeyup="checkPassword()">
+  <div id="message">
+    Happy birthday, [Brother's Name]! I hope you have a wonderful day.
+  </div>
+
+  <script>
+    function checkPassword() {
+      var passwordInput = document.getElementById("password-input");
+      var message = document.getElementById("message");
+      
+      if (passwordInput.value === "mypassword") {
+        message.style.display = "block";
+      } else {
+        message.style.display = "none";
+      }
+    }
+  </script>
 </body>
 </html>
